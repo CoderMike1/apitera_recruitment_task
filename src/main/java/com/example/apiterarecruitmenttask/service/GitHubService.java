@@ -19,6 +19,8 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.ArrayList;
+
+
 @Service
 public class GitHubService {
 
@@ -119,7 +121,7 @@ public class GitHubService {
     }
 
 
-    public ArrayList<APIResponse> execute(String owner) throws IOException, InterruptedException {
+    public ArrayList<APIResponse> getInfo(String owner) throws IOException, InterruptedException {
         ArrayList<APIResponse> resp = new ArrayList<>();
         ArrayList<RepoDTO> repos = getRepositories(owner);
 

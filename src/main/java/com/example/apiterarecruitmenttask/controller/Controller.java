@@ -6,6 +6,8 @@ import com.example.apiterarecruitmenttask.dto.RepoDTO;
 import com.example.apiterarecruitmenttask.service.GitHubService;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,9 +28,10 @@ public class Controller {
     }
 
     @GetMapping(path = "getRepos/{ownerLogin}")
-    public ArrayList<APIResponse> hello(@PathVariable String ownerLogin) throws IOException, InterruptedException {
+    public ResponseEntity<ArrayList<APIResponse>> hello(@PathVariable String ownerLogin) throws IOException, InterruptedException {
 
-        return service.execute(ownerLogin);
+        return new ResponseEntity<>(service.getInfo(ownerLogin), HttpStatus.OK);
+
 
     }
 
