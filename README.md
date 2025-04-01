@@ -35,7 +35,7 @@ GET http://localhost:8080/api/getRepos/{ownerLogin}
 ``
 
 Success Response Example:<br>
-``200 status ode``
+``200 status code``
 ```
 [
     {
