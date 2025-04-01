@@ -41,7 +41,7 @@ public class GitHubService {
         HttpResponse<String> response = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
 
         if(response.statusCode() == 404){
-            throw new GitHubUserNotFound("user "+owner+" not found.");
+            throw new GitHubUserNotFound("user '"+owner+"' not found.");
         }
         if(response.statusCode() == 403){
             throw new RateLimitException("rate limit exceeded, make sure that you put github access token to application.properties file");

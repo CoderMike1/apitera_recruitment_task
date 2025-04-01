@@ -36,7 +36,7 @@ public class AppIntegrationTests {
 
         mockMvc.perform(get("/api/getRepos/{ownerLogin}", imagine_owner))
                 .andExpect(status().isNotFound())
-                .andExpect(jsonPath("$.message").value("user "+imagine_owner+" not found."));
+                .andExpect(jsonPath("$.message").value("user '"+imagine_owner+"' not found."));
     }
 
     @Test
